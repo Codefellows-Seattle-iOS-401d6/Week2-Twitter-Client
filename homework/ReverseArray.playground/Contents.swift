@@ -3,7 +3,7 @@
 import UIKit
 
 func reverseArray<T> (inout input: [T]) -> [T] {
-    if (input.count != 0) {
+    if (!input.isEmpty) {
         var start = input.startIndex
         var end = input.endIndex.predecessor()
         var startElement = input[start]
@@ -11,8 +11,8 @@ func reverseArray<T> (inout input: [T]) -> [T] {
         repeat {
             input[start] = endElement
             input[end] = startElement
-            start = start + 1
-            end = end - 1
+            start = start.successor()
+            end = end.predecessor()
             startElement = input[start]
             endElement = input[end]
         } while (start <= end)

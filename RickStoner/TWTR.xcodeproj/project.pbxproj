@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04905F421D10650300DD2535 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 04905F411D10650300DD2535 /* tweet.json */; };
 		04B308781D0F4F4D006CD89A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B308771D0F4F4D006CD89A /* JSONParser.swift */; };
 		04B3087B1D0FA6D1006CD89A /* ReverseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3087A1D0FA6D1006CD89A /* ReverseArray.swift */; };
 		04DD3F161D0F49C400E07D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD3F151D0F49C400E07D7B /* AppDelegate.swift */; };
@@ -16,10 +17,10 @@
 		04DD3F201D0F49C400E07D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD3F1E1D0F49C400E07D7B /* LaunchScreen.storyboard */; };
 		04DD3F2B1D0F4A9200E07D7B /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD3F2A1D0F4A9200E07D7B /* Tweet.swift */; };
 		04DD3F2D1D0F4A9C00E07D7B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD3F2C1D0F4A9C00E07D7B /* User.swift */; };
-		04DD3F301D0F4AED00E07D7B /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DD3F2F1D0F4AED00E07D7B /* tweet.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04905F411D10650300DD2535 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tweet.json; path = ../../../../../Downloads/TWTR/TWTR/tweet.json; sourceTree = "<group>"; };
 		04B308771D0F4F4D006CD89A /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = ../JSONParser.swift; sourceTree = "<group>"; };
 		04B3087A1D0FA6D1006CD89A /* ReverseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseArray.swift; sourceTree = "<group>"; };
 		04DD3F121D0F49C400E07D7B /* TWTR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +32,6 @@
 		04DD3F211D0F49C400E07D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD3F2A1D0F4A9200E07D7B /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		04DD3F2C1D0F4A9C00E07D7B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		04DD3F2F1D0F4AED00E07D7B /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tweet.json; path = "../../../class-1/lecture/tweet.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 		04DD3F291D0F4A4900E07D7B /* App Global */ = {
 			isa = PBXGroup;
 			children = (
-				04DD3F2F1D0F4AED00E07D7B /* tweet.json */,
+				04905F411D10650300DD2535 /* tweet.json */,
 				04DD3F151D0F49C400E07D7B /* AppDelegate.swift */,
 				04DD3F211D0F49C400E07D7B /* Info.plist */,
 			);
@@ -179,10 +179,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04905F421D10650300DD2535 /* tweet.json in Resources */,
 				04DD3F201D0F49C400E07D7B /* LaunchScreen.storyboard in Resources */,
 				04DD3F1D1D0F49C400E07D7B /* Assets.xcassets in Resources */,
 				04DD3F1B1D0F49C400E07D7B /* Main.storyboard in Resources */,
-				04DD3F301D0F4AED00E07D7B /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

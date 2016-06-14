@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3555261D109AAD00B5AD80 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3555251D109AAD00B5AD80 /* API.swift */; };
 		8B6AC3621D0F4B42002F8DA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AC3611D0F4B42002F8DA5 /* main.m */; };
 		8B6AC3651D0F4B43002F8DA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AC3641D0F4B43002F8DA5 /* AppDelegate.m */; };
 		8B6AC36B1D0F4B43002F8DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AC3691D0F4B43002F8DA5 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3555251D109AAD00B5AD80 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8B6AC35D1D0F4B42002F8DA5 /* TWTR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AC3611D0F4B42002F8DA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B6AC3631D0F4B43002F8DA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE727571D0F53E400A56C11 /* JSONParser.swift */,
+				8B3555251D109AAD00B5AD80 /* API.swift */,
 			);
 			name = Utility;
 			path = ..;
@@ -211,6 +214,7 @@
 				8BE7275A1D0F5B2700A56C11 /* ViewController.swift in Sources */,
 				8B6AC3621D0F4B42002F8DA5 /* main.m in Sources */,
 				8BE727531D0F514A00A56C11 /* tweet.swift in Sources */,
+				8B3555261D109AAD00B5AD80 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

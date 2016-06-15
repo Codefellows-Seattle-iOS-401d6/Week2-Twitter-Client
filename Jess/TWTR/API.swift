@@ -16,7 +16,7 @@ class API { //creat as sigleton for static instance of account
     
     var account: ACAccount? //where we store account into
     
-    //four functions : private access to account,
+    //four functions 
     
     private func login(completion: (account: ACAccount?) -> ())
     {

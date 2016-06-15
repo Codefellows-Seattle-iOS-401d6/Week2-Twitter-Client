@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     func setupTableView() {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.navigationItem.title = "DEREKG"
     }
     
     func update() {

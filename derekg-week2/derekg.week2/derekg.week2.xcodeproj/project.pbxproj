@@ -17,6 +17,8 @@
 		697713861D0F610A00DA2E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697713851D0F610A00DA2E6B /* Assets.xcassets */; };
 		697713891D0F610A00DA2E6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697713871D0F610A00DA2E6B /* LaunchScreen.storyboard */; };
 		69ABA66A1D10A83A0003C1FE /* TwitterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABA6691D10A83A0003C1FE /* TwitterAPI.swift */; };
+		69ABA68A1D11F28E0003C1FE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABA6891D11F28E0003C1FE /* DetailViewController.swift */; };
+		69ABA68C1D11F9A90003C1FE /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABA68B1D11F9A90003C1FE /* Identity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		697713881D0F610A00DA2E6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6977138A1D0F610A00DA2E6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ABA6691D10A83A0003C1FE /* TwitterAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPI.swift; sourceTree = "<group>"; };
+		69ABA6891D11F28E0003C1FE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		69ABA68B1D11F9A90003C1FE /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				697713801D0F610A00DA2E6B /* ViewController.swift */,
+				69ABA6891D11F28E0003C1FE /* DetailViewController.swift */,
+				69ABA68B1D11F9A90003C1FE /* Identity.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 				695971251D0F645900BB1B35 /* user.swift in Sources */,
 				695971271D0F6B3800BB1B35 /* JSONParser.swift in Sources */,
 				697713811D0F610A00DA2E6B /* ViewController.swift in Sources */,
+				69ABA68C1D11F9A90003C1FE /* Identity.swift in Sources */,
 				695971231D0F644900BB1B35 /* tweet.swift in Sources */,
 				69ABA66A1D10A83A0003C1FE /* TwitterAPI.swift in Sources */,
 				6977137F1D0F610A00DA2E6B /* AppDelegate.swift in Sources */,
+				69ABA68A1D11F28E0003C1FE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

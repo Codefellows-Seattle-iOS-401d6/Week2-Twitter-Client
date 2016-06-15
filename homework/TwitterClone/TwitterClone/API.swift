@@ -32,11 +32,12 @@ class API {
                         return
                     })
                 }
+            } else {
+                print("Error: This app requires access to the Twitter Accounts.")
+                completion(accounts: nil)
+                return
             }
             
-//            print("Error: This app requires access to the Twitter Accounts.")
-//            completion(accounts: nil)
-//            return
         })
     }
     

@@ -12,7 +12,7 @@ import Social
 
 class API {
     static let shared = API()
-    var account = ACAccount?()
+    var account: ACAccount?
     
     func login(completion: (accounts: [ACAccount]?) -> ())    {
         let accountStore = ACAccountStore()
@@ -34,9 +34,9 @@ class API {
                 }
             }
             
-            print("Error: This app requires access to the Twitter Accounts.")
-            completion(accounts: nil)
-            return
+//            print("Error: This app requires access to the Twitter Accounts.")
+//            completion(accounts: nil)
+//            return
         })
     }
     
@@ -115,15 +115,5 @@ class API {
     func getTweets(completion: (tweets: [Tweet]?) -> ())
     {
         self.updateTimeLine(completion)
-//        } else {
-//            self.login({ (account) in
-//                if let account = account {
-//                    API.shared.account = account
-//                    self.updateTimeLine(completion)
-//                } else {
-//                    print("Account is nil.")
-//                }
-//            })
-//        }
     }
 }

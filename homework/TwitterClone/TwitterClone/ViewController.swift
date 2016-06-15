@@ -30,14 +30,6 @@ class ViewController: UIViewController
         super.viewWillAppear(animated)
         self.selectUser()
         self.update()
-
-//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) {(success, tweets) in
-//            if success {
-//                if let tweets = tweets {
-//                    self.datasource = tweets
-//                }
-//            }
-//        }
     }
     
     func update()
@@ -69,22 +61,6 @@ class ViewController: UIViewController
     func selectUser() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Account", style: .Plain, target: self, action: #selector(update))
     }
-    
-//    func alertUser() {
-//        let alertController = UIAlertController(title: "Select Account", message: "Please choose account to display Twitter Feed", preferredStyle:.ActionSheet)
-//    
-//        
-//        
-//        let oneAction = UIAlertAction(title: "One", style: .Default) { (_) in }
-//        let twoAction = UIAlertAction(title: "Two", style: .Default) { (_) in }
-//        let threeAction = UIAlertAction(title: "Three", style: .Default) { (_) in }
-//    
-//        alertController.addAction(oneAction)
-//        alertController.addAction(twoAction)
-//        alertController.addAction(threeAction)
-//
-//        self.presentViewController(alertController, animated: true, completion: nil)
-//    }
 }
 
 extension ViewController: UITableViewDataSource

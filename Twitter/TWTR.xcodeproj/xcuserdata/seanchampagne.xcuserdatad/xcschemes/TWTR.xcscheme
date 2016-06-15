@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B6AC35C1D0F4B42002F8DA5"
+               BlueprintIdentifier = "8B35552F1D11B77200B5AD80"
                BuildableName = "TWTR.app"
                BlueprintName = "TWTR"
                ReferencedContainer = "container:TWTR.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B6AC35C1D0F4B42002F8DA5"
+            BlueprintIdentifier = "8B35552F1D11B77200B5AD80"
             BuildableName = "TWTR.app"
             BlueprintName = "TWTR"
             ReferencedContainer = "container:TWTR.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B6AC35C1D0F4B42002F8DA5"
+            BlueprintIdentifier = "8B35552F1D11B77200B5AD80"
             BuildableName = "TWTR.app"
             BlueprintName = "TWTR"
             ReferencedContainer = "container:TWTR.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B6AC35C1D0F4B42002F8DA5"
+            BlueprintIdentifier = "8B35552F1D11B77200B5AD80"
             BuildableName = "TWTR.app"
             BlueprintName = "TWTR"
             ReferencedContainer = "container:TWTR.xcodeproj">

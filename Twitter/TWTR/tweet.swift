@@ -2,7 +2,7 @@
 //  tweet.swift
 //  TWTR
 //
-//  Created by Sean Champagne on 6/13/16.
+//  Created by Sean Champagne on 6/15/16.
 //  Copyright © 2016 Sean Champagne. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ class Tweet {
     let text: String
     let id: String
     let user: User?
+    var retweet: Tweet?
     
     init?(json: [String: AnyObject])
     {
@@ -20,6 +21,11 @@ class Tweet {
             self.text = text
             self.id = id
             self.user = User(json: user)
+            if let retweetJSON = json["retweeted_status"] as? [String : AnyObject] {
+                let retweet = Tweet(json: retweetJSON)
+                self.retweet = retweet
+            }
+            
         } else {
             return nil
         }

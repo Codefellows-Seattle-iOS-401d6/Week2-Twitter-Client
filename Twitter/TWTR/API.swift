@@ -2,7 +2,7 @@
 //  API.swift
 //  TWTR
 //
-//  Created by Sean Champagne on 6/14/16.
+//  Created by Sean Champagne on 6/15/16.
 //  Copyright © 2016 Sean Champagne. All rights reserved.
 //
 
@@ -125,4 +125,3 @@ class API {
         }
     }
 }
-

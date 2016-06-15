@@ -2,7 +2,7 @@
 //  user.swift
 //  TWTR
 //
-//  Created by Sean Champagne on 6/13/16.
+//  Created by Sean Champagne on 6/15/16.
 //  Copyright © 2016 Sean Champagne. All rights reserved.
 //
 

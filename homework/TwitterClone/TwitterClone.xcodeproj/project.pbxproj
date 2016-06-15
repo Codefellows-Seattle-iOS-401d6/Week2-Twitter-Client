@@ -16,6 +16,7 @@
 		14BE2A051D0F49BD009DEE94 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A041D0F49BD009DEE94 /* Tweet.swift */; };
 		14BE2A071D0F49CB009DEE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A061D0F49CB009DEE94 /* User.swift */; };
 		14BE2A0A1D0F4B26009DEE94 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A091D0F4B26009DEE94 /* JSONParser.swift */; };
+		14BE2A0D1D1099FC009DEE94 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A0C1D1099FC009DEE94 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		14BE2A041D0F49BD009DEE94 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		14BE2A061D0F49CB009DEE94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14BE2A091D0F4B26009DEE94 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		14BE2A0C1D1099FC009DEE94 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		14BE2A0B1D0F4B2A009DEE94 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				14BE2A0C1D1099FC009DEE94 /* API.swift */,
 				14BE2A091D0F4B26009DEE94 /* JSONParser.swift */,
 			);
 			name = Utilities;
@@ -192,6 +195,7 @@
 				14BE2A0A1D0F4B26009DEE94 /* JSONParser.swift in Sources */,
 				14BE2A051D0F49BD009DEE94 /* Tweet.swift in Sources */,
 				14BE29F01D0F46B0009DEE94 /* ViewController.swift in Sources */,
+				14BE2A0D1D1099FC009DEE94 /* API.swift in Sources */,
 				14BE29EE1D0F46B0009DEE94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +348,7 @@
 				14BE29FE1D0F46B1009DEE94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

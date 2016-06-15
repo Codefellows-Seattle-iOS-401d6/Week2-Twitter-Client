@@ -15,7 +15,7 @@ class JSONParser
     class func tweetJSONFrom(data: NSData, completion: JSONParserCompletion)
     {
         do {
-            if let JSON = try NSJSONSerialization.JSONObjectWithData(self.JSONData(), options: .MutableContainers) as? [[String: AnyObject]] {
+            if let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]] {
                 var tweets = [Tweet]()
                 for tweetJSON in JSON {
                     if let tweet = Tweet(json: tweetJSON) {

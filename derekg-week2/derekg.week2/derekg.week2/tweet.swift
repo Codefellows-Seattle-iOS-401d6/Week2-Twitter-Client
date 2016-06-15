@@ -14,6 +14,8 @@ class Tweet
     let id : String
     let user : User?
     
+    var retweet: Tweet?
+    
     init?(json : [String: AnyObject])
     {
         if let message = json["text"] as? String,
@@ -24,7 +26,14 @@ class Tweet
             self.message = message
             self.id = id
             self.user = User( json : user )
-            print(message)
+            
+            if let retweetJSON = json["retweeted_status"] as? [String : AnyObject] {
+                if let retweet = Tweet(json : retweetJSON){
+                    self.retweet = retweet
+                }
+            
+            }
+            
         } else {
             return nil
         }

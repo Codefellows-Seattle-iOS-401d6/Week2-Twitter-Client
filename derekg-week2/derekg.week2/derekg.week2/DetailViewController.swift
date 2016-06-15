@@ -17,11 +17,14 @@ class DetailViewController: UIViewController, Identity {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tweetLabel.text = "Bacon Ipsum"
-        self.userNameLabel.text = "Derek Graham"
+        if let tweet = self.tweet {
+            self.tweetLabel.text = tweet.message
+            self.userNameLabel.text = tweet.user?.name
+        }
 
         // Do any additional setup after loading the view.
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

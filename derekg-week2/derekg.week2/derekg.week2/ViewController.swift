@@ -68,6 +68,15 @@ class ViewController: UIViewController {
         self.navigationItem.title = "DEREKG"
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController   else { return }
+            
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
+    }
     func update() {
         
 //        API.shared.getAccountStore { (accountStore) in

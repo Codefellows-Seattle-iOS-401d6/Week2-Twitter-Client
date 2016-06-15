@@ -24,17 +24,19 @@ class ViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.update()
-
-
-    }
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//      
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
         
+        self.update()
+
 //        NSOperationQueue().addOperationWithBlock {
 //            usleep(500000)
 //            NSOperationQueue.mainQueue().addOperationWithBlock({
@@ -60,26 +62,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
     
     func update() {
         
-        API.shared.getAccountStore { (accountStore) in
-            if let accountStore = accountStore {
-                
-                let alertController = UIAlertController(title: "Multiple Twitter Accounts", message: "Choose an account", preferredStyle: .Alert)
-                    for account in accountStore.accounts {
-                        alertController.addAction(UIAlertAction(title: account.identifier, style: .Default) { (_) in })
-                    }
-
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
-                alertController.addAction(cancelAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    // ...
-                }
-                }
-        }
-        
+//        API.shared.getAccountStore { (accountStore) in
+//            if let accountStore = accountStore {
+//                
+//                let alertController = UIAlertController(title: "Multiple Twitter Accounts", message: "Choose an account", preferredStyle: .Alert)
+//                    for account in accountStore.accounts {
+//                        alertController.addAction(UIAlertAction(title: account.identifier, style: .Default) { (_) in })
+//                    }
+//
+//                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+//                alertController.addAction(cancelAction)
+//                
+//                self.presentViewController(alertController, animated: true) {
+//                    // ...
+//                }
+//                }
+//        }
+//        
         API.shared.getTweets( { (tweets) in
             if let tweets = tweets {
                 self.datasource = tweets

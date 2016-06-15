@@ -17,6 +17,8 @@
 		1C9F1AAC1D0F2F11006D5731 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F1AAB1D0F2F11006D5731 /* User.swift */; };
 		1C9F1AAF1D0F33C6006D5731 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F1AAE1D0F33C6006D5731 /* JSONParser.swift */; };
 		D91251EE1D10A02D0081F169 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91251ED1D10A02D0081F169 /* API.swift */; };
+		D912520E1D11EE8C0081F169 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912520D1D11EE8C0081F169 /* DetailViewController.swift */; };
+		D91252101D11F8730081F169 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912520F1D11F8730081F169 /* Identity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1C9F1AAB1D0F2F11006D5731 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1C9F1AAE1D0F33C6006D5731 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		D91251ED1D10A02D0081F169 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D912520D1D11EE8C0081F169 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D912520F1D11F8730081F169 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				1C1DAF161D0F2C4700D2BE18 /* AppDelegate.swift */,
 				1C1DAF221D0F2C4700D2BE18 /* Info.plist */,
 				1C9F1AA71D0F2DEC006D5731 /* tweet.json */,
+				D912520F1D11F8730081F169 /* Identity.swift */,
 			);
 			name = "App Global";
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1DAF181D0F2C4700D2BE18 /* ViewController.swift */,
+				D912520D1D11EE8C0081F169 /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 				1C9F1AAC1D0F2F11006D5731 /* User.swift in Sources */,
 				1C9F1AAF1D0F33C6006D5731 /* JSONParser.swift in Sources */,
 				1C9F1AAA1D0F2F07006D5731 /* Tweet.swift in Sources */,
+				D91252101D11F8730081F169 /* Identity.swift in Sources */,
 				1C1DAF191D0F2C4700D2BE18 /* ViewController.swift in Sources */,
 				D91251EE1D10A02D0081F169 /* API.swift in Sources */,
 				1C1DAF171D0F2C4700D2BE18 /* AppDelegate.swift in Sources */,
+				D912520E1D11EE8C0081F169 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

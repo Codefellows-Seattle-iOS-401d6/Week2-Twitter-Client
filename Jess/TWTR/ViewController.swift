@@ -21,6 +21,14 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationItem.title = "TWRT"
+        
+        func setupTableView()
+            {
+                self.tableView.estimatedRowHeight = 100
+                self.tableView.rowHeight = UITableViewAutomaticDimension
+        }
+
     }
     
     override func viewWillAppear(animated: Bool)
@@ -54,6 +62,16 @@ class ViewController: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == DetailViewController.id()
+        {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
     }
 }
 

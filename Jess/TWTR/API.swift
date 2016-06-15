@@ -52,7 +52,7 @@ class API { //creat as sigleton for static instance of account
         }
     }
     
-    private func GETOAuthUser(completion: (user: User?) -> ())
+    func GETOAuthUser(completion: (user: User?) -> ())
     {
         
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)

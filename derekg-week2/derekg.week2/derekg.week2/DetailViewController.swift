@@ -13,6 +13,8 @@ class DetailViewController: UIViewController, Identity {
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     
+    @IBOutlet weak var userImage: UIImageView!
+    
     var tweet : Tweet?
     
     override func viewDidLoad() {
@@ -27,6 +29,10 @@ class DetailViewController: UIViewController, Identity {
             } else {
                 self.tweetLabel.text = tweet.message
                 self.userNameLabel.text = tweet.user?.name
+                
+                let url = NSURL(string: (tweet.user?.profileImageUrl)!)
+                let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+                userImage.image = UIImage(data: data!)
             }
         }
 

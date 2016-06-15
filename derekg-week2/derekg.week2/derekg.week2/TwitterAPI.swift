@@ -124,7 +124,7 @@ class API
         
     }
     
-    private func GETOAuthUser(completion: (user: User?) -> ()){
+    func GETOAuthUser(completion: (user: User?) -> ()){
         
         let request = SLRequest(forServiceType: SLServiceTypeTwitter,
                                 requestMethod: .GET,
@@ -144,7 +144,8 @@ class API
             case 200...299:
                 do {
                     if let userJSON = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String : AnyObject] {
-                        completion(user: User(json: userJSON))
+                         dispatch_async(dispatch_get_main_queue(), { completion(user: User(json: userJSON))
+                    })
                     }
                     
                 }

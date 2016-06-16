@@ -20,6 +20,10 @@
 		14BE2A071D0F49CB009DEE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A061D0F49CB009DEE94 /* User.swift */; };
 		14BE2A0A1D0F4B26009DEE94 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A091D0F4B26009DEE94 /* JSONParser.swift */; };
 		14BE2A0D1D1099FC009DEE94 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2A0C1D1099FC009DEE94 /* API.swift */; };
+		14F5FB951D1342DE0053DF59 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5FB941D1342DE0053DF59 /* Cache.swift */; };
+		14F5FB971D1345E70053DF59 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F5FB961D1345E70053DF59 /* TweetCell.xib */; };
+		14F5FB991D1347780053DF59 /* TweetCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5FB981D1347780053DF59 /* TweetCellTableViewCell.swift */; };
+		14F5FB9D1D135CFA0053DF59 /* UserTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5FB9C1D135CFA0053DF59 /* UserTimeLineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		14BE2A061D0F49CB009DEE94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14BE2A091D0F4B26009DEE94 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		14BE2A0C1D1099FC009DEE94 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		14F5FB941D1342DE0053DF59 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		14F5FB961D1345E70053DF59 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		14F5FB981D1347780053DF59 /* TweetCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCellTableViewCell.swift; sourceTree = "<group>"; };
+		14F5FB9C1D135CFA0053DF59 /* UserTimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				14BE29ED1D0F46B0009DEE94 /* AppDelegate.swift */,
+				14F5FB941D1342DE0053DF59 /* Cache.swift */,
 				140E8C3C1D11F2D9000B4E3E /* Identity.swift */,
 				14BE29F91D0F46B1009DEE94 /* Info.plist */,
 				14BE2A021D0F4995009DEE94 /* tweet.json */,
@@ -96,6 +105,8 @@
 				14BE29F41D0F46B1009DEE94 /* Assets.xcassets */,
 				14BE29F61D0F46B1009DEE94 /* LaunchScreen.storyboard */,
 				14BE29F11D0F46B0009DEE94 /* Main.storyboard */,
+				14F5FB961D1345E70053DF59 /* TweetCell.xib */,
+				14F5FB981D1347780053DF59 /* TweetCellTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -105,6 +116,7 @@
 			children = (
 				140E8C3A1D11EFF7000B4E3E /* DetailViewController.swift */,
 				140E8C3E1D11F7B4000B4E3E /* ProfileViewController.swift */,
+				14F5FB9C1D135CFA0053DF59 /* UserTimeLineViewController.swift */,
 				14BE29EF1D0F46B0009DEE94 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -187,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BE29F81D0F46B1009DEE94 /* LaunchScreen.storyboard in Resources */,
+				14F5FB971D1345E70053DF59 /* TweetCell.xib in Resources */,
 				14BE29F51D0F46B1009DEE94 /* Assets.xcassets in Resources */,
 				14BE29F31D0F46B0009DEE94 /* Main.storyboard in Resources */,
 				14BE2A031D0F4995009DEE94 /* tweet.json in Resources */,
@@ -204,8 +217,11 @@
 				14BE2A0A1D0F4B26009DEE94 /* JSONParser.swift in Sources */,
 				14BE2A051D0F49BD009DEE94 /* Tweet.swift in Sources */,
 				140E8C3D1D11F2D9000B4E3E /* Identity.swift in Sources */,
+				14F5FB9D1D135CFA0053DF59 /* UserTimeLineViewController.swift in Sources */,
 				14BE29F01D0F46B0009DEE94 /* ViewController.swift in Sources */,
 				14BE2A0D1D1099FC009DEE94 /* API.swift in Sources */,
+				14F5FB991D1347780053DF59 /* TweetCellTableViewCell.swift in Sources */,
+				14F5FB951D1342DE0053DF59 /* Cache.swift in Sources */,
 				140E8C3F1D11F7B4000B4E3E /* ProfileViewController.swift in Sources */,
 				14BE29EE1D0F46B0009DEE94 /* AppDelegate.swift in Sources */,
 				140E8C3B1D11EFF7000B4E3E /* DetailViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UITableViewDelegate
 {
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,13 @@ class ViewController: UIViewController
     }
 
     var firstLogin = false
+    
+    var cache: Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            return delegate.cache
+        }
+        return nil
+    }
     
     override func viewDidLoad()
     {
@@ -73,8 +80,15 @@ class ViewController: UIViewController
     }
 
     func setupTableView() {
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.delegate = self
+        
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
     }
     
     func selectUser() {
@@ -91,9 +105,9 @@ extension ViewController: UITableViewDataSource
     
     func tableView (tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCellTableViewCell
         let tweet = self.datasource[indexPath.row]
-        cell.textLabel?.text = tweet.text
+        cell.tweet = tweet
         return cell
     }
 }

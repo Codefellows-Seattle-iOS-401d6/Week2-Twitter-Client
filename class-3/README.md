@@ -129,7 +129,7 @@ table viewtweetCell
 Content view
 Title
 ....
-
+****
 select "Title", attributes inspector(third from the right, downward pointing arrow), update lines from 1 to 0.
 
 go to viewController
@@ -214,7 +214,7 @@ class DetailViewController: UIViewController, Identity
       if let tweet = self.tweet {
         self.tweetLabel.text = tweet.text
         self.userLabel.text = tweet.user?.name
-      }
+      }x  a
   }
 }
 
@@ -256,3 +256,20 @@ if let retweet = tweet.retweet {
 
 
 ------
+
+Grab Button Item and rag it above the PRototype cell.
+
+drag and drop a new ViewController beneath the main.
+source cocoaTouch, call it ProfileViewController... add Identity protocol "UIViewController, Identity"
+
+go to storyboard.
+Sleect circle yellowset class to ProfileViewController (and storyboard ID)
+
+control drag from the button to the controller select Show detail
+
+add regular button to the new view controller, call it Close.
+drag close button into class ProfileViewController (before override)
+connection: action
+name: closeButtonSelected
+
+inside func, self.dismissViewControllerAnimated(true, completion: nil)

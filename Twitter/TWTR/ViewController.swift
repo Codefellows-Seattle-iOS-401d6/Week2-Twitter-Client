@@ -8,10 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UITableViewDelegate
 {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var cache: Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
+    }
     
     var datasource = [Tweet]() {
         didSet {
@@ -22,12 +29,15 @@ class ViewController: UIViewController
     {
         super.viewWillAppear(animated)
         self.update()
+        self.setUpTableView()
     }
     
     func setUpTableView()
     {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.delegate = self
     }
     
     func update()
@@ -51,8 +61,8 @@ class ViewController: UIViewController
         if segue.identifier == DetailViewController.id()
         {
             guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
-            let indexPath = self.tableView.indexPathForSelectedRow
-            detailViewController.tweet = self.datasource[indexPath!.row]
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            detailViewController.tweet = self.datasource[indexPath.row]
         }
     
 //        if segue.identifier == ProfileViewController.id()
@@ -61,6 +71,12 @@ class ViewController: UIViewController
 //            let indexPath = self.tableView.indexPathForSelectedRow
 //            profileViewController.user = self.datasource[indexPath!.row]
 //        }
+    }
+    
+    //a manual segue function for the xib because xib cant drag and drop on the storyboard to create outlets
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
     }
     
 }
@@ -72,10 +88,13 @@ extension ViewController: UITableViewDataSource
             return self.datasource.count
         }
         
-        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+        {
+            let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+            
             let tweet = self.datasource[indexPath.row]
-            cell.textLabel?.text = tweet.text
+            //cell.textLabel?.text = tweet.text
+            cell.tweet = tweet
             return cell
         }
         

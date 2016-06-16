@@ -40,6 +40,9 @@ class ProfileViewController: UIViewController, Identity
 
             }
         }
+        API.shared.GETOAuthUser { (user) in
+            print(user)
+        }
     }
     
     override func didReceiveMemoryWarning() {

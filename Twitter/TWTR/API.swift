@@ -16,7 +16,7 @@ class API {
     var account: ACAccount?
     
     //login function
-    private func login(completion: (account: ACAccount?) -> ())
+    func login(completion: (account: ACAccount?) -> ())
     {
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
@@ -80,8 +80,8 @@ class API {
         }
     }
     //update timeline function
-    private func updateTimeline(completion: (tweets: [Tweet]?) -> ()) {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+    private func updateTimeline(urlString: String, completion: (tweets: [Tweet]?) -> ()) {
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: urlString), parameters: nil)
         request.account = self.account
         request.performRequestWithHandler {(data, response, error) in
             if let _ = error {
@@ -92,7 +92,8 @@ class API {
             switch response.statusCode {
                 
             case 200...299:
-                JSONParser.tweetJSONFrom(data, completion: {(success, tweets) in dispatch_async(dispatch_get_main_queue(), {completion(tweets: tweets)
+                JSONParser.tweetJSONFrom(data, completion: {(success, tweets) in
+                    dispatch_async(dispatch_get_main_queue(), {completion(tweets: tweets)
                 })
                 })
                 
@@ -112,16 +113,39 @@ class API {
     }
     func getTweets(completion: (tweets: [Tweet]?) -> ()) {
         if let _ = self.account {
-            self.updateTimeline(completion)
+            NSOperationQueue.mainQueue().addOperationWithBlock( {
+            self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
+            })
         } else {
-            self.login({(account) in
+            self.login({(account) -> () in
                 if let account = account{
                     API.shared.account = account
-                    self.updateTimeline(completion)
+                    NSOperationQueue.mainQueue().addOperationWithBlock( {
+                    self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
+                    })
                 } else {
                     print("error nil derp!")
                 }
             })
+        }
+    }
+    
+    func getUserTweets(username: String, completion: (tweets: [Tweet]?) -> ())
+    {
+        self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+    }
+    
+    func getImage(urlString: String, completion:(image: UIImage)->())
+    {
+        NSOperationQueue().addOperationWithBlock
+            {
+                guard let url = NSURL(string: urlString) else { return }
+                guard let data = NSData(contentsOfURL: url) else { return }
+                guard let image = UIImage(data: data) else { return }
+                
+                NSOperationQueue.mainQueue().addOperationWithBlock({
+                    completion(image: image)
+                })
         }
     }
 }

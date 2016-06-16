@@ -19,24 +19,43 @@ class ViewController: UIViewController
         }
     }
 
-
+    var firstLogin = false
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.setupTableView()
+        self.navigationItem.title = "TWRT"
     }
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         self.selectUser()
-        self.update()
+        if !firstLogin {
+            self.update()
+            firstLogin = true
+        }
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
     }
     
     func update()
     {
         API.shared.login({ (accounts) in
             if let accounts = accounts {
-                let alertController = UIAlertController(title: "Select Account", message: "Please choose account to display Twitter Feed", preferredStyle:.ActionSheet)
+                let alertController = UIAlertController(title: "Accounts", message: "Please choose account to display Twitter Feed", preferredStyle:.ActionSheet)
                 for account in accounts {
                     let action = UIAlertAction(title: account.username, style: .Default) { (action) in
                         API.shared.account = account
@@ -53,13 +72,13 @@ class ViewController: UIViewController
         })
     }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func selectUser() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select Account", style: .Plain, target: self, action: #selector(update))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Accounts", style: .Plain, target: self, action: #selector(update))
     }
 }
 

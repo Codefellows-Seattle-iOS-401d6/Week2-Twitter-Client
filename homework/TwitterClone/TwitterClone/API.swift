@@ -10,11 +10,13 @@ import Foundation
 import Accounts
 import Social
 
-class API {
+class API
+{
     static let shared = API()
     var account: ACAccount?
     
-    func login(completion: (accounts: [ACAccount]?) -> ())    {
+    func login(completion: (accounts: [ACAccount]?) -> ())
+    {
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
@@ -33,15 +35,17 @@ class API {
                     })
                 }
             } else {
-                print("Error: This app requires access to the Twitter Accounts.")
+                print("Error: There are no Twitter accounts.")
                 completion(accounts: nil)
                 return
             }
-            
+//            print("Error: This app requires access to the Twitter Accounts.")
+//            completion(accounts: nil)
+//            return
         })
     }
     
-    private func GETOAuthoUser(completion: (user: User?) -> ())
+    func GETOAuthoUser(completion: (user: User?) -> ())
     {
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         

@@ -12,7 +12,6 @@ class DetailViewController: UIViewController, Identity
 {
     var tweet: Tweet?
     @IBOutlet weak var tweetLabel: UILabel!
-
     @IBOutlet weak var userLabel: UILabel!
 
     override func viewDidLoad() {

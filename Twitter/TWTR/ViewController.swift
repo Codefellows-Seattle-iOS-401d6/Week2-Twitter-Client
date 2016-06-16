@@ -18,7 +18,6 @@ class ViewController: UIViewController
             self.tableView.reloadData()
         }
     }
-    
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -51,10 +50,17 @@ class ViewController: UIViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == DetailViewController.id()
         {
-            guard let DetailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
             let indexPath = self.tableView.indexPathForSelectedRow
-            DetailViewController.tweet = self.datasource[indexPath!.row]
+            detailViewController.tweet = self.datasource[indexPath!.row]
         }
+    
+//        if segue.identifier == ProfileViewController.id()
+//        {
+//            guard let profileViewController = segue.destinationViewController as? ProfileViewController else { return }
+//            let indexPath = self.tableView.indexPathForSelectedRow
+//            profileViewController.user = self.datasource[indexPath!.row]
+//        }
     }
     
 }

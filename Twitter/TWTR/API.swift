@@ -43,7 +43,7 @@ class API {
         })
     }
     //getOAuthUser function
-    private func GETOAuthUser(completion: (user: User?) -> ())
+    func GETOAuthUser(completion: (user: User?) -> ())
     {
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         request.account = self.account

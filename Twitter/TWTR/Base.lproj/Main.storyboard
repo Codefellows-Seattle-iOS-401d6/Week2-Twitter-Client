@@ -57,13 +57,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rka-KC-N5M">
-                        <barButtonItem key="leftBarButtonItem" title="OK" style="plain" id="g95-Ja-wwz">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="g95-Ja-wwz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kXH-sj-R26">
                                 <rect key="frame" x="20" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK"/>
+                                <state key="normal" title="Profile"/>
                                 <connections>
-                                    <segue destination="ono-pt-xrT" kind="showDetail" id="69z-cn-egt"/>
+                                    <segue destination="ono-pt-xrT" kind="showDetail" identifier="ProfileViewController" id="69z-cn-egt"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -95,9 +95,38 @@
                                     <action selector="closeButtonSelected:" destination="ono-pt-xrT" eventType="touchUpInside" id="jDG-Cw-nwn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="!Name!!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojx-SG-le8">
+                                <rect key="frame" x="279" y="81" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-QO-Jed">
+                                <rect key="frame" x="180" y="173" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="!Location!!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-m7-uEb">
+                                <rect key="frame" x="279" y="110" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ojx-SG-le8" firstAttribute="leading" secondItem="4dI-st-ODu" secondAttribute="leadingMargin" constant="259" id="KeP-bg-RDm"/>
+                            <constraint firstAttribute="trailing" secondItem="ibr-m7-uEb" secondAttribute="trailing" constant="20" id="Mh1-jq-TWW"/>
+                            <constraint firstAttribute="trailing" secondItem="ojx-SG-le8" secondAttribute="trailing" constant="20" id="OvU-UG-lyF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ojx-SG-le8" secondAttribute="trailing" constant="20" id="UI4-wq-1dR"/>
+                            <constraint firstItem="ojx-SG-le8" firstAttribute="leading" secondItem="4dI-st-ODu" secondAttribute="leading" constant="20" id="r3H-xh-bzo"/>
+                            <constraint firstItem="ibr-m7-uEb" firstAttribute="centerX" secondItem="ojx-SG-le8" secondAttribute="centerX" id="uyH-cd-HIG"/>
+                            <constraint firstItem="ibr-m7-uEb" firstAttribute="leading" secondItem="4dI-st-ODu" secondAttribute="leading" constant="20" id="xLc-xM-SAC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="ibr-m7-uEb" id="fHY-OG-Sut"/>
+                        <outlet property="profileImgLabel" destination="qJS-QO-Jed" id="cJi-Bm-X2Y"/>
+                        <outlet property="profileLabel" destination="ojx-SG-le8" id="EoW-mT-a1s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h93-4m-Uy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

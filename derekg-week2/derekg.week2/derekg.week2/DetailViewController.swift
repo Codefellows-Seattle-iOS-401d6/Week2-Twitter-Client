@@ -15,7 +15,13 @@ class DetailViewController: UIViewController, Identity {
     
     @IBOutlet weak var userImage: UIImageView!
     
-    var tweet : Tweet?
+    var tweet : Tweet?{
+        didSet {
+            self.setup()
+   
+        }
+    }
+    
     
     var cache: Cache<UIImage>? {
         if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
@@ -26,7 +32,6 @@ class DetailViewController: UIViewController, Identity {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setup()
         
 //        if let tweet = self.tweet {
 //            

@@ -52,7 +52,7 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupTweetCell()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -12,7 +12,7 @@ class Tweet
 {
     let text: String
     let id: String
-    let user: User?
+    var user: User?
     var retweet: Tweet?
     
     init?(json: [String : AnyObject])

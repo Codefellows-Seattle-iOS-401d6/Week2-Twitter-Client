@@ -19,6 +19,7 @@
 		D91251EE1D10A02D0081F169 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91251ED1D10A02D0081F169 /* API.swift */; };
 		D912520E1D11EE8C0081F169 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912520D1D11EE8C0081F169 /* DetailViewController.swift */; };
 		D91252101D11F8730081F169 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912520F1D11F8730081F169 /* Identity.swift */; };
+		D91252121D12071C0081F169 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91252111D12071C0081F169 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D91251ED1D10A02D0081F169 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D912520D1D11EE8C0081F169 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D912520F1D11F8730081F169 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		D91252111D12071C0081F169 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				1C1DAF181D0F2C4700D2BE18 /* ViewController.swift */,
 				D912520D1D11EE8C0081F169 /* DetailViewController.swift */,
+				D91252111D12071C0081F169 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				D91252101D11F8730081F169 /* Identity.swift in Sources */,
 				1C1DAF191D0F2C4700D2BE18 /* ViewController.swift in Sources */,
 				D91251EE1D10A02D0081F169 /* API.swift in Sources */,
+				D91252121D12071C0081F169 /* ProfileViewController.swift in Sources */,
 				1C1DAF171D0F2C4700D2BE18 /* AppDelegate.swift in Sources */,
 				D912520E1D11EE8C0081F169 /* DetailViewController.swift in Sources */,
 			);

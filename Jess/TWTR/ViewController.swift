@@ -18,6 +18,12 @@ class ViewController: UIViewController
         }
     }
     
+    var portsource = [User](){
+        didSet {
+            self.portView.reloadData()
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,16 +41,6 @@ class ViewController: UIViewController
     {
         super.viewWillAppear(animated)
         
-        // Make the call.
-//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-//            if success {
-//                if let tweets = tweets {
-//                    self.datasource = tweets
-//                }
-//            }
-//        }
-//    }
-
       self.update()
     }
     
@@ -54,8 +50,10 @@ class ViewController: UIViewController
                     self.datasource = tweets
                 }
             }
-            
         }
+    
+
+
     
 
     
@@ -71,6 +69,13 @@ class ViewController: UIViewController
             guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
             guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
             detailViewController.tweet = self.datasource[indexPath.row]
+        }
+   
+        if segue.identifier == ProfileViewController.id()
+        {
+            guard let profileViewController = segue.destinationViewController as? ProfileViewController else { return }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            profileViewController.user = self.datasource[indexPath.row]
         }
     }
 }

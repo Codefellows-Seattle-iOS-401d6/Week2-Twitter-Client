@@ -3,7 +3,7 @@
 //  TWTR
 //
 //  Created by Jessica Malesh on 6/15/16.
-//  Copyright © 2016 Michael Babiy. All rights reserved.
+//  Copyright © 2016 Jess Malesh. All rights reserved.
 //
 
 import Foundation

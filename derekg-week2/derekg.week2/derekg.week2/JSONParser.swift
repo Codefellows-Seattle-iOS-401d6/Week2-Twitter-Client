@@ -1,4 +1,4 @@
-s//
+//
 //  JSONParser.swift
 //  derekg.week2
 //
@@ -17,14 +17,18 @@ class JSONParser
             
             if let root_json_object = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[ String : AnyObject]]{
                 var tweets = [Tweet]()
-                for tweetJson in root_json_object {
-                    
-                    if let tweet = Tweet(json : tweetJson)
-                    {
-                        tweets.append(tweet)
+                var queue = NSOperationQueue()
+                
+                queue.addOperationWithBlock {
+                    for tweetJson in root_json_object {
+                        
+                        if let tweet = Tweet(json : tweetJson)
+                        {
+                            tweets.append(tweet)
+                        }
                     }
+                    completion( success: true, tweets : tweets)
                 }
-                completion( success: true, tweets : tweets)
             }
             
             

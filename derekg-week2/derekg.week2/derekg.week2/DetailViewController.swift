@@ -33,6 +33,7 @@ class DetailViewController: UIViewController, Identity {
                 let url = NSURL(string: (tweet.user?.profileImageUrl)!)
                 let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
                 userImage.image = UIImage(data: data!)
+                
             }
         }
 

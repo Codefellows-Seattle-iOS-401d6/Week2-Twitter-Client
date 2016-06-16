@@ -17,13 +17,18 @@ class ProfileViewController: UIViewController, Identity {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.userNameLabel.hidden = true
         self.userLocationLabel.hidden = true
+        
         self.activityViewController.startAnimating()
+        
         API.shared.GETOAuthUser { (user) in
             self.userNameLabel.text = user?.name
             self.userLocationLabel.text = user?.location
+            
             self.activityViewController.stopAnimating()
+            
             self.userNameLabel.hidden = false
             self.userLocationLabel.hidden = false
         }

@@ -17,20 +17,19 @@ class User
     var profile: User?
     var tweet: Tweet?
     
+    let screenName: String
+    
     init?(json: [String : AnyObject])
     {
         
         
-        if let name = json["name"] as? String, profileImageUrl = json["profile_image_url"] as? String, location = json["location"] as? String, user =  json["user"] as? [String: AnyObject]      {
+        if let name = json["name"] as? String, profileImageUrl = json["profile_image_url"] as? String, location = json["location"] as? String, screenName =  json["screen_name"] as?  String     {
             self.name = name
             self.profileImageUrl = profileImageUrl
             self.location = location
+            self.screenName = screenName
             
-            if let profile = User(json: user)
-                {
-                    self.profile = profile
-                }
-            }
+        }
             
         
         else {

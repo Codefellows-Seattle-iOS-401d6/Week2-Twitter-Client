@@ -160,6 +160,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-gw-NwC">
+                                <rect key="frame" x="250" y="167" width="100" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-kc-oEC">
+                                <rect key="frame" x="277" y="202" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Scj-Ql-bsP" kind="show" id="E4h-zk-zTK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -179,6 +189,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="profileImageView" destination="6P9-gw-NwC" id="lrQ-hu-wf2"/>
                         <outlet property="tweetLabel" destination="8Na-U6-4n2" id="5WU-Eq-B61"/>
                         <outlet property="userLabel" destination="Vch-0L-q7q" id="yLQ-9l-kIg"/>
                     </connections>
@@ -186,6 +197,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn4-Jh-dSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1791" y="456"/>
+        </scene>
+        <!--User Time Line View Controller-->
+        <scene sceneID="jis-Kf-xh7">
+            <objects>
+                <tableViewController id="Scj-Ql-bsP" customClass="UserTimeLineViewController" customModule="TWTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="74R-GK-mHv" customClass="UserTimeLineTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Scj-Ql-bsP" id="0Ok-0S-gOk"/>
+                            <outlet property="delegate" destination="Scj-Ql-bsP" id="5NI-gL-5EP"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="UserTimeLineViewControl" destination="74R-GK-mHv" id="Efu-5d-UsA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRs-79-pLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2499" y="456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Fl-Y8-83H">

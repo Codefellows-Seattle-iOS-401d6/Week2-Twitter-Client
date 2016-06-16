@@ -8,9 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UITableViewDelegate
 {
     @IBOutlet weak var tableView: UITableView!
+    
+    var cache: Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
+    }
+
     
     var datasource = [Tweet]() {
         didSet {
@@ -18,44 +26,40 @@ class ViewController: UIViewController
         }
     }
     
-    var portsource = [User](){
-        didSet {
-            self.portView.reloadData()
-        }
-    }
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.setupTableView()
         self.navigationItem.title = "TWRT"
-        
-        func setupTableView()
-            {
-                self.tableView.estimatedRowHeight = 100
-                self.tableView.rowHeight = UITableViewAutomaticDimension
-        }
-
     }
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        
-      self.update()
+        self.update()
     }
+
     
-      func update() {
-            API.shared.getTweets { (tweets) in
-                if let tweets = tweets{
-                    self.datasource = tweets
-                }
+    func setupTableView()
+    {
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.delegate = self
+    }
+
+    
+    func update()
+    {
+        API.shared.getTweets { (tweets) -> () in
+            if let tweets = tweets {
+                self.datasource = tweets
             }
         }
+    }
     
-
-
-    
-
     
     override func didReceiveMemoryWarning()
     {
@@ -70,14 +74,12 @@ class ViewController: UIViewController
             guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
             detailViewController.tweet = self.datasource[indexPath.row]
         }
-   
-        if segue.identifier == ProfileViewController.id()
-        {
-            guard let profileViewController = segue.destinationViewController as? ProfileViewController else { return }
-            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
-            profileViewController.user = self.datasource[indexPath.row]
-        }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource
@@ -89,10 +91,12 @@ extension ViewController: UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        
         let tweet = self.datasource[indexPath.row]
         
-        cell.textLabel?.text = tweet.text
+
+        cell.tweet = tweet
         
         return cell
     }

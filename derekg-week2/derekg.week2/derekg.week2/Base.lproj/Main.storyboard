@@ -167,6 +167,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jp-SV-Shz">
+                                <rect key="frame" x="277" y="249" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Hq1-nv-Ps8" kind="show" id="eM2-NX-RbC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -188,6 +195,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWT-bm-rOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1811" y="284"/>
+        </scene>
+        <!--User Time Line View Controller-->
+        <scene sceneID="IdB-vC-0B7">
+            <objects>
+                <viewController id="Hq1-nv-Ps8" customClass="UserTimeLineViewController" customModule="derekg_week2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u6U-BB-edO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wts-R1-uZn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VOw-t5-y1T" customClass="UserTimeLineView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VOw-t5-y1T" id="XbT-B0-UXi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mf0-u6-0qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="277"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="047-fH-6w7">

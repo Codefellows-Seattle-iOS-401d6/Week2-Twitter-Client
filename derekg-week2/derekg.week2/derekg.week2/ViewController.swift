@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         didSet {
             self.update()
         }
+    }
+    var cache: Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
     }
 
 //    override func viewDidAppear(animated: Bool) {
@@ -66,6 +72,9 @@ class ViewController: UIViewController {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.navigationItem.title = "DEREKG"
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.delegate = self
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -77,6 +86,11 @@ class ViewController: UIViewController {
             detailViewController.tweet = self.datasource[indexPath.row]
         }
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+    }
+    
     func update() {
         
 //        API.shared.getAccountStore { (accountStore) in
@@ -121,6 +135,7 @@ class ViewController: UIViewController {
 //        })
     }
 
+    
 
 }
 
@@ -131,9 +146,15 @@ extension ViewController : UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        
         let tweet = self.datasource[indexPath.row]
-        cell.textLabel?.text = tweet.message
+        
+//      cell.textLabel?.text = tweet.message
+        cell.tweet = tweet
         return cell
     }
+    
+    
+    
 }

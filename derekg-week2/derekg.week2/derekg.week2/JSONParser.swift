@@ -17,9 +17,7 @@ class JSONParser
             
             if let root_json_object = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[ String : AnyObject]]{
                 var tweets = [Tweet]()
-                var queue = NSOperationQueue()
-                
-                queue.addOperationWithBlock {
+                NSOperationQueue().addOperationWithBlock {
                     for tweetJson in root_json_object {
                         
                         if let tweet = Tweet(json : tweetJson)

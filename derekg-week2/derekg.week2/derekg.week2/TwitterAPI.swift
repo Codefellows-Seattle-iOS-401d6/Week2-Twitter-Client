@@ -173,10 +173,10 @@ class API
         
     }
     
-    private func updateTimeLine( completion: (tweets: [Tweet]?) -> ()){
+    private func updateTimeLine( urlString: String, completion: (tweets: [Tweet]?) -> ()){
         let request = SLRequest(forServiceType: SLServiceTypeTwitter,
                                 requestMethod: .GET,
-                                URL: NSURL (string: "https://api.twitter.com/1.1/statuses/home_timeline.json"),
+                                URL: NSURL (string: urlString),
                                 parameters: nil)
         
         request.account = self.account
@@ -216,12 +216,12 @@ class API
         if let _ = self.accountStore {
             
             if let _ = self.accountID {
-                self.updateTimeLine(completion)
+                self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
             } else {
                 self.loginWithIdentifier(self.accountID!, completion: { (account) in
                     if let account = account {
                         API.shared.account = account
-                        self.updateTimeLine(completion)
+                        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
                     } else {
                         print("unable to login to account with ID")
                     }
@@ -232,13 +232,13 @@ class API
         } else {
             
             if let _ = self.account {
-                self.updateTimeLine(completion)
+                self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
             } else {
                 
                 self.login( { (account) in
                     if let account = account {
                         API.shared.account = account
-                        self.updateTimeLine(completion)
+                        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
                     } else {
                         print("account is nil")
                     }
@@ -253,5 +253,21 @@ class API
 
     }
     
+    func getUserTweets( username: String, completion: (tweets: [Tweet]?)->()){
+        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+    }
     
+    
+    func getProfileImage(urlString: String, completion: (image: UIImage)->()){
+        NSOperationQueue().addOperationWithBlock {
+            guard let url = NSURL(string: urlString) else { return }
+            guard let data = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: data) else { return }
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                completion(image: image)
+            })
+        }
+
+    }
 }

@@ -23,6 +23,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, Ident
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+//        instantiateDetailViewController()
         
         if let tweet = self.tweet, user = tweet.user {
             if let originalTweet = tweet.retweet, originalUser = originalTweet.user {
@@ -39,6 +40,14 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, Ident
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let indexPath = self.userTableView.indexPathForSelectedRow else { return }
+            detailViewController.tweet = self.tweets[indexPath.row]
+        }
+    }
+    
     func setupTableView() {
         self.userTableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
         self.userTableView.dataSource = self
@@ -49,12 +58,26 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, Ident
     
     func update(screenname: String) {
         API.shared.getUserTweets(screenname) { (tweets) in
+            for tweet in tweets! {
+                print(tweet.text)
+            }
             guard let tweets = tweets else { return }
             self.tweets = tweets
         }
     }
     
-
+//    func instantiateDetailViewController() {
+//        let detailStoryBoard = UIStoryboard(name: "DetailStoryBoard", bundle: nil)
+//        let detailViewController = detailStoryBoard.instantiateViewControllerWithIdentifier("DetailViewController")
+//        self.presentViewController(detailViewController, animated: true, completion: nil)
+//        
+//        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+//    }
+//    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+//    }
+    
 }
 
 extension UserTimeLineViewController {

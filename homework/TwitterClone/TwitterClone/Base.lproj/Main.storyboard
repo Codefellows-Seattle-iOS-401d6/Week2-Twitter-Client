@@ -141,7 +141,7 @@
         <!--Detail View Controller-->
         <scene sceneID="e6p-Aw-s1S">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="h2W-Hy-xXj" customClass="DetailViewController" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailStoryBoard" id="h2W-Hy-xXj" customClass="DetailViewController" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCN-m1-ixZ"/>
                         <viewControllerLayoutGuide type="bottom" id="0C9-H3-tcL"/>

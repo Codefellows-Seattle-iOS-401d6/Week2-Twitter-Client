@@ -254,8 +254,9 @@ class API
     }
     
     func getUserTweets( username: String, completion: (tweets: [Tweet]?)->()){
-        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+        self.updateTimeLine("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
     }
+
     
     
     func getProfileImage(urlString: String, completion: (image: UIImage)->()){

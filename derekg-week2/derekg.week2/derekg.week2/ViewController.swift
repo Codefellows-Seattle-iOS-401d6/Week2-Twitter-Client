@@ -43,13 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         self.update()
 
-//        NSOperationQueue().addOperationWithBlock {
-//            usleep(500000)
-//            NSOperationQueue.mainQueue().addOperationWithBlock({
-//                
-//                
-//            })
-//        }
         
         // Do any additional setup after loading the view, typically from a nib.
 //        JSONParser.tweetJSON(JSONParser.jsonData(), completion:
@@ -87,29 +80,12 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
     }
     
     func update() {
         
-//        API.shared.getAccountStore { (accountStore) in
-//            if let accountStore = accountStore {
-//                
-//                let alertController = UIAlertController(title: "Multiple Twitter Accounts", message: "Choose an account", preferredStyle: .Alert)
-//                    for account in accountStore.accounts {
-//                        alertController.addAction(UIAlertAction(title: account.identifier, style: .Default) { (_) in })
-//                    }
-//
-//                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
-//                alertController.addAction(cancelAction)
-//                
-//                self.presentViewController(alertController, animated: true) {
-//                    // ...
-//                }
-//                }
-//        }
-//        
         API.shared.getTweets( { (tweets) in
             if let tweets = tweets {
                 self.datasource = tweets
@@ -120,19 +96,9 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-  
-        
-
-        
-//        JSONParser.tweetJSON(JSONParser.jsonData(), completion:
-//            { (success, tweets) in
-//                if success {
-//                    if let tweets = tweets {
-//                        self.datasource = tweets
-//                    }
-//                }
-//            
-//        })
+        if let row = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRowAtIndexPath(row, animated: false)
+        }
     }
 
     
@@ -146,7 +112,7 @@ extension ViewController : UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
         
         let tweet = self.datasource[indexPath.row]
         

@@ -15,12 +15,8 @@ class DetailViewController: UIViewController, Identity {
     
     @IBOutlet weak var userImage: UIImageView!
     
-    var tweet : Tweet?{
-        didSet {
-            self.setup()
+    var tweet : Tweet?
    
-        }
-    }
     
     
     var cache: Cache<UIImage>? {
@@ -32,7 +28,8 @@ class DetailViewController: UIViewController, Identity {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setup()
+
 //        if let tweet = self.tweet {
 //            
 //            if let retweet = tweet.retweet {
@@ -66,15 +63,24 @@ class DetailViewController: UIViewController, Identity {
          else {
             self.navigationItem.title = "Tweet"
             self.tweetLabel.text = tweet.message
-            self.userNameLabel.text = tweet.user?.name
+            self.userNameLabel.text = user.name
             
-                self.profileImage((tweet.user?.profileImageUrl)!, completion: { (image) in
+                self.profileImage(user.profileImageUrl, completion: { (image) in
                     self.userImage.image = image
                 })
             }
         }
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == UserTimeLineViewController.id() {
+            guard let userTimeLineViewController = segue.destinationViewController as? UserTimeLineViewController   else { return }
+            
+            
+            userTimeLineViewController.tweet = self.tweet
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

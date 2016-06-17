@@ -167,11 +167,10 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jp-SV-Shz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jp-SV-Shz">
                                 <rect key="frame" x="277" y="249" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="Hq1-nv-Ps8" kind="show" id="eM2-NX-RbC"/>
+                                    <segue destination="Hq1-nv-Ps8" kind="show" identifier="UserTimeLineViewController" id="eM2-NX-RbC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,16 +179,18 @@
                             <constraint firstAttribute="trailingMargin" secondItem="XAl-he-iUn" secondAttribute="trailing" constant="16" id="6TA-lH-1cH"/>
                             <constraint firstItem="yOU-oH-4G7" firstAttribute="centerX" secondItem="IbB-PW-JX5" secondAttribute="centerX" id="7wY-7q-lsz"/>
                             <constraint firstItem="XAl-he-iUn" firstAttribute="centerY" secondItem="IbB-PW-JX5" secondAttribute="centerY" id="Erh-Iu-fdh"/>
+                            <constraint firstItem="9Jp-SV-Shz" firstAttribute="top" secondItem="yOU-oH-4G7" secondAttribute="top" id="ZZZ-7N-TdZ"/>
                             <constraint firstItem="XAl-he-iUn" firstAttribute="leading" secondItem="IbB-PW-JX5" secondAttribute="leadingMargin" id="cNG-z1-dQd"/>
                             <constraint firstItem="n32-Lo-Who" firstAttribute="top" secondItem="XAl-he-iUn" secondAttribute="bottom" constant="8" symbolic="YES" id="fDN-Wc-tLm"/>
+                            <constraint firstItem="9Jp-SV-Shz" firstAttribute="centerX" secondItem="IbB-PW-JX5" secondAttribute="centerX" id="hXu-er-P5i"/>
                             <constraint firstItem="XAl-he-iUn" firstAttribute="centerX" secondItem="n32-Lo-Who" secondAttribute="centerX" id="jbl-Tb-XhZ"/>
                             <constraint firstItem="XAl-he-iUn" firstAttribute="top" secondItem="yOU-oH-4G7" secondAttribute="bottom" constant="8" id="ycx-Nn-x0m"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tweetLabel" destination="XAl-he-iUn" id="iok-dX-mpX"/>
-                        <outlet property="userImage" destination="yOU-oH-4G7" id="HvS-s2-iMU"/>
-                        <outlet property="userNameLabel" destination="n32-Lo-Who" id="aDY-D0-0FB"/>
+                        <outlet property="tweetLabel" destination="XAl-he-iUn" id="Mt9-gF-svU"/>
+                        <outlet property="userImage" destination="yOU-oH-4G7" id="vpW-Nk-A2f"/>
+                        <outlet property="userNameLabel" destination="n32-Lo-Who" id="W1H-CX-5NV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWT-bm-rOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,18 +200,14 @@
         <!--User Time Line View Controller-->
         <scene sceneID="IdB-vC-0B7">
             <objects>
-                <viewController id="Hq1-nv-Ps8" customClass="UserTimeLineViewController" customModule="derekg_week2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u6U-BB-edO"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wts-R1-uZn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VOw-t5-y1T" customClass="UserTimeLineView">
+                <viewController storyboardIdentifier="UserTimeLineViewController" id="Hq1-nv-Ps8" customClass="UserTimeLineViewController" customModule="derekg_week2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zxB-76-LMV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </tableView>
                     <connections>
-                        <outlet property="tableView" destination="VOw-t5-y1T" id="XbT-B0-UXi"/>
+                        <outlet property="tableView" destination="zxB-76-LMV" id="WMV-8x-trQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mf0-u6-0qc" userLabel="First Responder" sceneMemberID="firstResponder"/>

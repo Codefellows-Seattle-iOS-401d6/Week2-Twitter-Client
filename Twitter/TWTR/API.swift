@@ -80,7 +80,7 @@ class API {
         }
     }
     //update timeline function
-    private func updateTimeline(urlString: String, completion: (tweets: [Tweet]?) -> ()) {
+    func updateTimeline(urlString: String, completion: (tweets: [Tweet]?) -> ()) {
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: urlString), parameters: nil)
         request.account = self.account
         request.performRequestWithHandler {(data, response, error) in
@@ -93,7 +93,8 @@ class API {
                 
             case 200...299:
                 JSONParser.tweetJSONFrom(data, completion: {(success, tweets) in
-                    dispatch_async(dispatch_get_main_queue(), {completion(tweets: tweets)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(tweets: tweets)
                 })
                 })
                 
@@ -113,16 +114,12 @@ class API {
     }
     func getTweets(completion: (tweets: [Tweet]?) -> ()) {
         if let _ = self.account {
-            NSOperationQueue.mainQueue().addOperationWithBlock( {
             self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
-            })
         } else {
             self.login({(account) -> () in
                 if let account = account{
                     API.shared.account = account
-                    NSOperationQueue.mainQueue().addOperationWithBlock( {
                     self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
-                    })
                 } else {
                     print("error nil derp!")
                 }
@@ -132,7 +129,7 @@ class API {
     
     func getUserTweets(username: String, completion: (tweets: [Tweet]?) -> ())
     {
-        self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+        self.updateTimeline("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
     }
     
     func getImage(urlString: String, completion:(image: UIImage)->())

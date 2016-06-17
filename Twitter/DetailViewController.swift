@@ -37,12 +37,13 @@ class DetailViewController: UIViewController, Identity
 //            self.userLabel.text = tweet.user?.name
 //            }
 //        }
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if segue.identifier == UserTimelineViewController.id()
         {
-            let UserTimelineViewController = segue.destinationViewController as! UserTimelineViewController
+            guard let UserTimelineViewController = segue.destinationViewController as? UserTimelineViewController else { return }
             UserTimelineViewController.tweet = self.tweet
         }
     }

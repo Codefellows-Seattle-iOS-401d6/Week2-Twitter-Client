@@ -153,12 +153,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6p-7u-mip">
-                                <rect key="frame" x="200" y="396" width="200" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="D4F-ls-2ha"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ge9-eb-E8X">
                                 <rect key="frame" x="257" y="313" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -177,23 +171,26 @@
                                     <segue destination="G0J-XB-Oj6" kind="show" identifier="UserTimelineViewController" id="l9C-qt-ewL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6p-7u-mip">
+                                <rect key="frame" x="275" y="449" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="AGz-8h-jMU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bif-Dg-SwW" firstAttribute="top" secondItem="ge9-eb-E8X" secondAttribute="bottom" constant="65" id="4tc-EW-9ce"/>
-                            <constraint firstItem="Q6p-7u-mip" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="6Ie-uy-3Fc"/>
+                            <constraint firstItem="Q6p-7u-mip" firstAttribute="centerX" secondItem="bif-Dg-SwW" secondAttribute="centerX" id="6hZ-am-O4j"/>
                             <constraint firstItem="ge9-eb-E8X" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="AuO-CW-NWi"/>
                             <constraint firstItem="P7G-xG-c8m" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="DW4-Ot-Jut"/>
                             <constraint firstItem="ge9-eb-E8X" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="I2N-m4-7Zm"/>
                             <constraint firstItem="P7G-xG-c8m" firstAttribute="leading" secondItem="12G-Nn-GrH" secondAttribute="leadingMargin" constant="-8" id="KHa-HM-bco"/>
-                            <constraint firstItem="kBP-ky-Ylr" firstAttribute="top" secondItem="Q6p-7u-mip" secondAttribute="bottom" constant="76" id="NeE-m2-dnh"/>
-                            <constraint firstItem="Q6p-7u-mip" firstAttribute="top" secondItem="ge9-eb-E8X" secondAttribute="bottom" constant="62" id="W12-Ii-cXq"/>
+                            <constraint firstItem="Q6p-7u-mip" firstAttribute="top" secondItem="ge9-eb-E8X" secondAttribute="bottom" constant="62" id="Tch-lb-qKk"/>
                             <constraint firstItem="P7G-xG-c8m" firstAttribute="top" secondItem="pTI-eE-qqK" secondAttribute="bottom" constant="155" id="XNQ-CB-ZQX"/>
                             <constraint firstItem="P7G-xG-c8m" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="axg-Ct-HYQ"/>
-                            <constraint firstItem="Q6p-7u-mip" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="crQ-i0-eWi"/>
-                            <constraint firstItem="Q6p-7u-mip" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="dFe-6O-mGm"/>
                             <constraint firstItem="ge9-eb-E8X" firstAttribute="top" secondItem="P7G-xG-c8m" secondAttribute="bottom" constant="73" id="hfK-Ek-x5W"/>
-                            <constraint firstItem="Q6p-7u-mip" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="l1Y-dK-YyB"/>
+                            <constraint firstItem="kBP-ky-Ylr" firstAttribute="top" secondItem="Q6p-7u-mip" secondAttribute="bottom" constant="76" id="p3Y-VZ-bLG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P7G-xG-c8m" secondAttribute="trailing" constant="-9" id="qPw-re-5Y7"/>
                             <constraint firstItem="bif-Dg-SwW" firstAttribute="centerX" secondItem="12G-Nn-GrH" secondAttribute="centerX" id="uNx-Qo-FU2"/>
                         </constraints>
@@ -220,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o4U-Gj-j9e">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o4U-Gj-j9e">
                                 <rect key="frame" x="7" y="9" width="587" height="581"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -245,6 +242,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wj4-WS-4Fz" firstAttribute="top" secondItem="o4U-Gj-j9e" secondAttribute="bottom" constant="10" id="PqT-PV-jkk"/>
+                            <constraint firstItem="o4U-Gj-j9e" firstAttribute="leading" secondItem="pHM-zc-IRJ" secondAttribute="leadingMargin" constant="-13" id="UBO-cI-DXt"/>
+                            <constraint firstItem="o4U-Gj-j9e" firstAttribute="centerX" secondItem="pHM-zc-IRJ" secondAttribute="centerX" id="imE-Av-NDO"/>
+                            <constraint firstItem="o4U-Gj-j9e" firstAttribute="centerY" secondItem="pHM-zc-IRJ" secondAttribute="centerY" id="ziT-IF-RhC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DCG-tM-ltb"/>
                     <connections>
@@ -253,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFC-hX-HHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="-2433"/>
+            <point key="canvasLocation" x="1613" y="-2443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="87N-R1-EyW">

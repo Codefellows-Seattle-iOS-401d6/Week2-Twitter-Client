@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="181" id="O9g-b8-Ltw" customClass="TweetCell" customModule="TWTR" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="181" id="O9g-b8-Ltw" customClass="TweetCell" customModule="TWTR" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O9g-b8-Ltw" id="ldV-bS-uHs">
@@ -42,13 +42,18 @@
                     <constraint firstAttribute="leadingMargin" secondItem="fkO-ik-BUz" secondAttribute="leading" id="6um-8i-mYb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fkO-ik-BUz" secondAttribute="trailing" id="BJ2-cQ-IMy"/>
                     <constraint firstAttribute="leadingMargin" secondItem="fMX-7C-xki" secondAttribute="leading" id="EYC-mt-e8X"/>
+                    <constraint firstItem="fkO-ik-BUz" firstAttribute="centerX" secondItem="ldV-bS-uHs" secondAttribute="centerX" id="Gai-fK-tDu"/>
                     <constraint firstItem="6Lu-g9-TGz" firstAttribute="top" secondItem="fMX-7C-xki" secondAttribute="bottom" constant="41" id="Rxz-SS-HtC"/>
+                    <constraint firstItem="6Lu-g9-TGz" firstAttribute="centerX" secondItem="ldV-bS-uHs" secondAttribute="centerX" id="S1Q-nH-9IF"/>
                     <constraint firstItem="fMX-7C-xki" firstAttribute="centerX" secondItem="ldV-bS-uHs" secondAttribute="centerX" id="YOY-Hv-Le9"/>
                     <constraint firstItem="6Lu-g9-TGz" firstAttribute="centerX" secondItem="ldV-bS-uHs" secondAttribute="centerX" id="aia-qh-kCV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="6Lu-g9-TGz" secondAttribute="bottom" constant="23.5" id="e47-07-pgj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fMX-7C-xki" secondAttribute="trailing" id="gbn-8d-jQ8"/>
+                    <constraint firstItem="fMX-7C-xki" firstAttribute="centerX" secondItem="ldV-bS-uHs" secondAttribute="centerX" id="heN-Oe-v5G"/>
                     <constraint firstAttribute="topMargin" secondItem="fkO-ik-BUz" secondAttribute="top" id="htX-3z-dKp"/>
+                    <constraint firstItem="fMX-7C-xki" firstAttribute="leading" secondItem="ldV-bS-uHs" secondAttribute="leadingMargin" id="ppo-CO-oSn"/>
                     <constraint firstItem="fMX-7C-xki" firstAttribute="top" secondItem="fkO-ik-BUz" secondAttribute="bottom" constant="8" id="wmo-a9-18r"/>
+                    <constraint firstItem="fMX-7C-xki" firstAttribute="trailing" secondItem="ldV-bS-uHs" secondAttribute="trailingMargin" id="y86-lN-mpd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
